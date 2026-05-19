@@ -1,349 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kirti Birthday Magic ✨</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-body{
-    overflow:hidden;
-    height:100vh;
-    background:
-    radial-gradient(circle at top,#24104a 0%,#090018 60%,#000 100%);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    position:relative;
-}
-
-/* ================= STARS ================= */
-
-.stars{
-    position:absolute;
-    width:100%;
-    height:100%;
-}
-
-.star{
-    position:absolute;
-    background:white;
-    border-radius:50%;
-    animation:twinkle linear infinite;
-}
-
-@keyframes twinkle{
-    from{
-        opacity:0.2;
-        transform:scale(0.5);
-    }
-
-    to{
-        opacity:1;
-        transform:scale(1.5);
-    }
-}
-
-/* ================= MOON ================= */
-
-.moon{
-    position:absolute;
-    top:40px;
-    right:70px;
-
-    width:180px;
-    height:180px;
-
-    border-radius:50%;
-
-    background:#fff7c7;
-
-    box-shadow:
-    0 0 40px #fff7b3,
-    0 0 80px #fff7b3,
-    0 0 160px #fff7b3;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    font-size:34px;
-    font-weight:bold;
-
-    color:#444;
-
-    animation:moonFloat 6s ease-in-out infinite;
-}
-
-@keyframes moonFloat{
-
-    0%,100%{
-        transform:translateY(0px);
-    }
-
-    50%{
-        transform:translateY(-12px);
-    }
-
-}
-
-/* ================= SHOOTING STAR ================= */
-
-.shooting{
-    position:absolute;
-    width:200px;
-    height:3px;
-
-    background:
-    linear-gradient(to right,white,transparent);
-
-    transform:rotate(-35deg);
-
-    animation:shoot 6s linear infinite;
-}
-
-.s1{
-    top:10%;
-    left:-20%;
-}
-
-@keyframes shoot{
-
-    0%{
-        transform:translateX(0) translateY(0) rotate(-35deg);
-        opacity:1;
-    }
-
-    100%{
-        transform:translateX(1800px) translateY(500px) rotate(-35deg);
-        opacity:0;
-    }
-
-}
-
-/* ================= MAIN CARD ================= */
-
-.container{
-
-    z-index:10;
-
-    text-align:center;
-
-    opacity:0;
-
-    animation:showCard 3s ease forwards;
-    animation-delay:9s;
-
-}
-
-@keyframes showCard{
-
-    from{
-        opacity:0;
-        transform:translateY(40px) scale(0.8);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0px) scale(1);
-    }
-
-}
-
-/* ================= IMAGE ================= */
-
-.imageBox{
-
-    position:relative;
-
-    width:280px;
-    height:280px;
-
-    margin:auto;
-
-}
-
-.circle{
+.flower{
 
     position:absolute;
 
-    width:100%;
-    height:100%;
-
-    border-radius:50%;
-
-    border:3px solid rgba(255,255,255,0.2);
-
-    animation:rotateCircle 10s linear infinite;
-
-}
-
-.circle::before{
-
-    content:'';
-
-    position:absolute;
-
-    width:14px;
-    height:14px;
-
-    background:white;
-
-    border-radius:50%;
-
-    top:-7px;
     left:50%;
+    bottom:360px;
 
     transform:translateX(-50%);
 
-    box-shadow:0 0 20px white;
-
-}
-
-@keyframes rotateCircle{
-
-    100%{
-        transform:rotate(360deg);
-    }
-
-}
-
-.profile{
-
-    position:absolute;
-
-    width:250px;
-    height:250px;
-
-    top:15px;
-    left:15px;
-
-    border-radius:50%;
-
-    object-fit:cover;
-
-    border:5px solid rgba(255,255,255,0.8);
-
-    box-shadow:
-    0 0 30px white,
-    0 0 70px rgba(255,255,255,0.3);
-
-    animation:float 5s ease-in-out infinite;
-
-}
-
-@keyframes float{
-
-    0%,100%{
-        transform:translateY(0px);
-    }
-
-    50%{
-        transform:translateY(-15px);
-    }
-
-}
-
-/* ================= TEXT ================= */
-
-h1{
-
-    margin-top:30px;
-
-    font-size:68px;
-
-    background:
-    linear-gradient(to right,#ffd6ff,#ffffff,#ffd6ff);
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-
-    animation:titleGlow 3s infinite alternate;
-
-}
-
-@keyframes titleGlow{
-
-    from{
-        text-shadow:0 0 15px pink;
-    }
-
-    to{
-        text-shadow:0 0 60px pink;
-    }
-
-}
-
-p{
-
-    margin-top:20px;
-
-    font-size:24px;
-
-    line-height:1.8;
-
-    color:#f1f1f1;
-
-}
-
-/* ================= FLOWER ================= */
-
-.flowerScene{
-
-    position:absolute;
-
-    bottom:0;
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:500px;
-    height:500px;
-
-}
-
-/* stem */
-
-.stem{
-
-    position:absolute;
-
-    bottom:0;
-    left:50%;
-
-    width:12px;
-    height:0px;
-
-    background:#2ecc71;
-
-    transform:translateX(-50%);
-
-    border-radius:20px;
-
-    animation:growStem 2s ease forwards;
-
-}
-
-@keyframes growStem{
-
-    from{
-        height:0;
-    }
-
-    to{
-        height:240px;
-    }
+    width:220px;
+    height:220px;
 
 }
 
@@ -356,69 +21,136 @@ p{
     width:90px;
     height:140px;
 
+    border-radius:50%;
+
     background:
     radial-gradient(circle at top,
-    #ffb6ff,
-    #ff4dd2);
+    #ffd2ff,
+    #ff4fd8);
 
-    border-radius:50%;
+    box-shadow:
+    0 0 30px rgba(255,105,180,0.7);
 
     opacity:0;
 
-    left:50%;
-    bottom:220px;
-
-    transform-origin:bottom center;
-
-    box-shadow:
-    0 0 25px rgba(255,105,180,0.6);
-
-    animation:bloom 2s ease forwards;
+    transform-origin:center center;
 
 }
+
+/* TOP */
 
 .p1{
-    transform:translateX(-50%) rotate(0deg) scale(0);
-    animation-delay:2s;
-}
+    top:-30px;
+    left:65px;
 
-.p2{
-    transform:translateX(-50%) rotate(60deg) scale(0);
+    transform:scale(0);
+
+    animation:bloom1 1.2s ease forwards;
     animation-delay:3s;
 }
 
-.p3{
-    transform:translateX(-50%) rotate(120deg) scale(0);
+/* TOP RIGHT */
+
+.p2{
+    top:10px;
+    left:120px;
+
+    transform:rotate(60deg) scale(0);
+
+    animation:bloom2 1.2s ease forwards;
     animation-delay:4s;
 }
 
-.p4{
-    transform:translateX(-50%) rotate(180deg) scale(0);
+/* BOTTOM RIGHT */
+
+.p3{
+    top:80px;
+    left:120px;
+
+    transform:rotate(120deg) scale(0);
+
+    animation:bloom3 1.2s ease forwards;
     animation-delay:5s;
 }
 
-.p5{
-    transform:translateX(-50%) rotate(240deg) scale(0);
+/* BOTTOM */
+
+.p4{
+    top:120px;
+    left:65px;
+
+    transform:rotate(180deg) scale(0);
+
+    animation:bloom4 1.2s ease forwards;
     animation-delay:6s;
 }
 
-.p6{
-    transform:translateX(-50%) rotate(300deg) scale(0);
+/* BOTTOM LEFT */
+
+.p5{
+    top:80px;
+    left:10px;
+
+    transform:rotate(240deg) scale(0);
+
+    animation:bloom5 1.2s ease forwards;
     animation-delay:7s;
 }
 
-@keyframes bloom{
+/* TOP LEFT */
 
-    from{
-        opacity:0;
-        transform:translateX(-50%) scale(0) rotate(var(--r));
-    }
+.p6{
+    top:10px;
+    left:10px;
 
+    transform:rotate(300deg) scale(0);
+
+    animation:bloom6 1.2s ease forwards;
+    animation-delay:8s;
+}
+
+/* bloom animations */
+
+@keyframes bloom1{
     to{
         opacity:1;
-        transform:translateX(-50%) scale(1) rotate(var(--r));
+        transform:scale(1);
     }
+}
 
+@keyframes bloom2{
+    to{
+        opacity:1;
+        transform:rotate(60deg) scale(1);
+    }
+}
+
+@keyframes bloom3{
+    to{
+        opacity:1;
+        transform:rotate(120deg) scale(1);
+    }
+}
+
+@keyframes bloom4{
+    to{
+        opacity:1;
+        transform:rotate(180deg) scale(1);
+    }
+}
+
+@keyframes bloom5{
+    to{
+        opacity:1;
+        transform:rotate(240deg) scale(1);
+    }
+}
+
+@keyframes bloom6{
+    to{
+        opacity:1;
+        transform:rotate(300deg) scale(1);
+    }
 }
 
 /* flower center */
@@ -427,205 +159,23 @@ p{
 
     position:absolute;
 
-    width:70px;
-    height:70px;
-
-    background:gold;
+    width:75px;
+    height:75px;
 
     border-radius:50%;
 
-    left:50%;
-    bottom:255px;
+    background:gold;
 
-    transform:translateX(-50%) scale(0);
+    top:72px;
+    left:72px;
 
     box-shadow:
     0 0 40px gold,
-    0 0 80px gold;
+    0 0 100px gold;
+
+    transform:scale(0);
 
     animation:centerGlow 2s ease forwards;
-    animation-delay:8s;
+    animation-delay:9s;
 
 }
-
-@keyframes centerGlow{
-
-    from{
-        transform:translateX(-50%) scale(0);
-        opacity:0;
-    }
-
-    to{
-        transform:translateX(-50%) scale(1);
-        opacity:1;
-    }
-
-}
-
-/* ================= MOON LIGHT EFFECT ================= */
-
-.moonLight{
-
-    position:absolute;
-
-    width:800px;
-    height:800px;
-
-    background:
-    radial-gradient(circle,
-    rgba(255,255,255,0.2),
-    transparent 70%);
-
-    top:-250px;
-    right:-200px;
-
-    opacity:0;
-
-    animation:lightAppear 3s ease forwards;
-    animation-delay:7.5s;
-
-}
-
-@keyframes lightAppear{
-
-    from{
-        opacity:0;
-    }
-
-    to{
-        opacity:1;
-    }
-
-}
-
-/* ================= HEARTS ================= */
-
-.heart{
-
-    position:absolute;
-
-    font-size:24px;
-
-    color:pink;
-
-    animation:fly 8s linear infinite;
-
-    opacity:0;
-
-}
-
-@keyframes fly{
-
-    0%{
-        transform:translateY(0) scale(0.5);
-        opacity:0;
-    }
-
-    20%{
-        opacity:1;
-    }
-
-    100%{
-        transform:translateY(-1000px) translateX(120px);
-        opacity:0;
-    }
-
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- Stars -->
-<div class="stars" id="stars"></div>
-
-<!-- Moon -->
-<div class="moon">
-Kirti
-</div>
-
-<!-- Moon Light -->
-<div class="moonLight"></div>
-
-<!-- Shooting Star -->
-<div class="shooting s1"></div>
-
-<!-- Hearts -->
-<div class="heart" style="left:15%; bottom:-100px; animation-delay:0s;">❤</div>
-<div class="heart" style="left:75%; bottom:-150px; animation-delay:3s;">❤</div>
-
-<!-- Flower Scene -->
-<div class="flowerScene">
-
-    <div class="stem"></div>
-
-    <div class="petal p1" style="--r:0deg;"></div>
-    <div class="petal p2" style="--r:60deg;"></div>
-    <div class="petal p3" style="--r:120deg;"></div>
-    <div class="petal p4" style="--r:180deg;"></div>
-    <div class="petal p5" style="--r:240deg;"></div>
-    <div class="petal p6" style="--r:300deg;"></div>
-
-    <div class="center"></div>
-
-</div>
-
-<!-- Main Content -->
-<div class="container">
-
-    <div class="imageBox">
-
-        <div class="circle"></div>
-
-        <!-- PUT IMAGE -->
-        <img src="kirti.jpg" class="profile">
-
-    </div>
-
-    <h1>Happy Birthday Kirti ✨</h1>
-
-    <p>
-        Like this flower blooming under the moonlight,<br>
-        may your life blossom with happiness,<br>
-        dreams and endless smiles 🌙💖
-    </p>
-
-</div>
-
-<script>
-
-/* create stars */
-
-const starsContainer =
-document.getElementById('stars');
-
-for(let i=0;i<500;i++){
-
-    const star =
-    document.createElement('div');
-
-    star.classList.add('star');
-
-    const size = Math.random()*3;
-
-    star.style.width = size + 'px';
-    star.style.height = size + 'px';
-
-    star.style.top =
-    Math.random()*100 + '%';
-
-    star.style.left =
-    Math.random()*100 + '%';
-
-    star.style.animationDuration =
-    (Math.random()*4+2) + 's';
-
-    starsContainer.appendChild(star);
-
-}
-
-</script>
-
-</body>
-</html>
