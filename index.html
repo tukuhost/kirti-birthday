@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Kirti ✨</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow:hidden;
+    height:100vh;
+    background:
+    radial-gradient(circle at top,#1d2671 0%,#090a1a 60%,#000 100%);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    position:relative;
+}
+
+/* ========= STARS ========= */
+
+.stars{
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+.star{
+    position:absolute;
+    background:white;
+    border-radius:50%;
+    animation:twinkle linear infinite;
+}
+
+@keyframes twinkle{
+    0%{opacity:0.2;transform:scale(0.5);}
+    100%{opacity:1;transform:scale(1.2);}
+}
+
+/* ========= SHOOTING STARS ========= */
+
+.shooting-star{
+    position:absolute;
+    width:150px;
+    height:2px;
+    background:linear-gradient(to right,white,transparent);
+    transform:rotate(-35deg);
+    animation:shoot 5s linear infinite;
+}
+
+.s1{
+    top:15%;
+    left:-20%;
+    animation-delay:0s;
+}
+
+.s2{
+    top:35%;
+    left:-30%;
+    animation-delay:2s;
+}
+
+@keyframes shoot{
+    0%{
+        transform:translateX(0) translateY(0) rotate(-35deg);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateX(1600px) translateY(400px) rotate(-35deg);
+        opacity:0;
+    }
+}
+
+/* ========= MOON ========= */
+
+.moon{
+    position:absolute;
+    top:50px;
+    right:80px;
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    background:#fff8c9;
+    box-shadow:
+    0 0 30px #fff6b7,
+    0 0 60px #fff6b7,
+    0 0 100px #fff6b7;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#333;
+    font-size:30px;
+    font-weight:bold;
+    animation:moonGlow 4s infinite alternate;
+}
+
+@keyframes moonGlow{
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.05);
+    }
+}
+
+/* ========= CENTER CARD ========= */
+
+.container{
+    z-index:10;
+    text-align:center;
+    animation:fadeIn 3s ease;
+    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,0.05);
+    padding:35px;
+    border-radius:30px;
+    box-shadow:0 0 30px rgba(255,255,255,0.1);
+}
+
+/* ========= IMAGE ========= */
+
+.profile-wrap{
+    position:relative;
+    width:260px;
+    height:260px;
+    margin:auto;
+}
+
+.ring{
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    border:3px solid rgba(255,255,255,0.3);
+    animation:rotate 8s linear infinite;
+}
+
+.ring::before{
+    content:'';
+    position:absolute;
+    top:-6px;
+    left:50%;
+    width:12px;
+    height:12px;
+    background:white;
+    border-radius:50%;
+    box-shadow:0 0 20px white;
+}
+
+@keyframes rotate{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+.profile{
+    width:230px;
+    height:230px;
+    object-fit:cover;
+    border-radius:50%;
+    position:absolute;
+    top:15px;
+    left:15px;
+    border:5px solid rgba(255,255,255,0.8);
+    box-shadow:
+    0 0 30px white,
+    0 0 60px rgba(255,255,255,0.4);
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+/* ========= TEXT ========= */
+
+h1{
+    margin-top:25px;
+    font-size:58px;
+    font-weight:700;
+    background:linear-gradient(to right,#ffd6f9,#ffffff,#ffd6f9);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px pink;
+    }
+
+    to{
+        text-shadow:0 0 40px pink;
+    }
+}
+
+p{
+    margin-top:15px;
+    font-size:22px;
+    color:#f1f1f1;
+    line-height:1.5;
+}
+
+/* ========= TREE ========= */
+
+.tree{
+    position:absolute;
+    bottom:-20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:350px;
+    height:450px;
+}
+
+/* Tree Trunk */
+
+.trunk{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:50px;
+    height:120px;
+    background:#5b341d;
+    border-radius:10px;
+}
+
+/* Leaves */
+
+.branch{
+    position:absolute;
+    background:linear-gradient(to bottom,#4caf50,#145214);
+    border-radius:50%;
+    opacity:0;
+    animation:bloom 1.2s forwards;
+    box-shadow:0 0 25px rgba(0,255,100,0.4);
+}
+
+.branch:nth-child(1){
+    width:160px;
+    height:160px;
+    top:20px;
+    left:95px;
+    animation-delay:0.5s;
+}
+
+.branch:nth-child(2){
+    width:250px;
+    height:150px;
+    top:110px;
+    left:50px;
+    animation-delay:1.5s;
+}
+
+.branch:nth-child(3){
+    width:300px;
+    height:160px;
+    top:210px;
+    left:25px;
+    animation-delay:2.5s;
+}
+
+@keyframes bloom{
+    from{
+        transform:scale(0);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* ========= LIGHTS ========= */
+
+.light{
+    position:absolute;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    animation:blink 1s infinite alternate;
+}
+
+.light1{background:#ffea00;box-shadow:0 0 20px #ffea00;}
+.light2{background:#ff4dff;box-shadow:0 0 20px #ff4dff;}
+.light3{background:#00ffff;box-shadow:0 0 20px #00ffff;}
+.light4{background:#ff884d;box-shadow:0 0 20px #ff884d;}
+
+@keyframes blink{
+    from{
+        opacity:0.3;
+        transform:scale(0.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.3);
+    }
+}
+
+/* ========= HEARTS ========= */
+
+.heart{
+    position:absolute;
+    color:pink;
+    font-size:20px;
+    animation:fly 8s linear infinite;
+    opacity:0;
+}
+
+@keyframes fly{
+    0%{
+        transform:translateY(0) scale(0.5);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-900px) translateX(100px);
+        opacity:0;
+    }
+}
+
+/* ========= FADE ========= */
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Stars -->
+<div class="stars" id="stars"></div>
+
+<!-- Shooting Stars -->
+<div class="shooting-star s1"></div>
+<div class="shooting-star s2"></div>
+
+<!-- Moon -->
+<div class="moon">
+Kirti
+</div>
+
+<!-- Floating Hearts -->
+<div class="heart" style="left:10%; bottom:-50px; animation-delay:0s;">❤</div>
+<div class="heart" style="left:30%; bottom:-80px; animation-delay:2s;">❤</div>
+<div class="heart" style="left:70%; bottom:-50px; animation-delay:4s;">❤</div>
+<div class="heart" style="left:85%; bottom:-90px; animation-delay:6s;">❤</div>
+
+<!-- Center Content -->
+<div class="container">
+
+    <div class="profile-wrap">
+
+        <div class="ring"></div>
+
+        <!-- Put your image name here -->
+        <img src="kirti.jpg" class="profile">
+
+    </div>
+
+    <h1>Happy Birthday Kirti ✨</h1>
+
+    <p>
+        Like the moon in this magical night sky,<br>
+        you glow beautifully in every heart 🌙💖
+    </p>
+
+</div>
+
+<!-- Tree -->
+<div class="tree">
+
+    <div class="branch"></div>
+    <div class="branch"></div>
+    <div class="branch"></div>
+
+    <div class="trunk"></div>
+
+    <!-- Lights -->
+
+    <div class="light light1" style="top:80px; left:150px;"></div>
+    <div class="light light2" style="top:120px; left:100px;"></div>
+    <div class="light light3" style="top:140px; left:220px;"></div>
+    <div class="light light4" style="top:190px; left:70px;"></div>
+    <div class="light light1" style="top:220px; left:250px;"></div>
+    <div class="light light2" style="top:260px; left:140px;"></div>
+    <div class="light light3" style="top:300px; left:210px;"></div>
+    <div class="light light4" style="top:310px; left:90px;"></div>
+
+</div>
+
+<script>
+
+/* Generate stars */
+
+const starsContainer = document.getElementById('stars');
+
+for(let i=0;i<350;i++){
+
+    const star = document.createElement('div');
+
+    star.classList.add('star');
+
+    let size = Math.random()*3;
+
+    star.style.width = size + 'px';
+    star.style.height = size + 'px';
+
+    star.style.top = Math.random()*100 + '%';
+    star.style.left = Math.random()*100 + '%';
+
+    star.style.animationDuration =
+    (Math.random()*3+1) + 's';
+
+    starsContainer.appendChild(star);
+}
+
+</script>
+
+</body>
+</html>
